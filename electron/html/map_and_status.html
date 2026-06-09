@@ -1,0 +1,60 @@
+<div id="map"></div>
+<!-- ═══ LAYER 4: MAP OVERLAY TOOLBAR ═══ -->
+  <div class="map-top-toolbar label-text" id="map-overlay-toolbar">
+    <button id="btn-ctr-all" class="overlay-btn">⊕ CTR ALL</button>
+    <div class="overlay-sep"></div>
+    <button id="btn-follow-mode" class="overlay-btn">⌖ FOLLOW: OFF</button>
+    <div class="overlay-sep"></div>
+    <button id="btn-recenter" class="overlay-btn">↻ RECENTER</button>
+    <div class="overlay-sep"></div>
+    <button id="btn-toggle-debug" class="overlay-btn">⚙ DBG</button>
+    <div class="overlay-sep"></div>
+    <button id="btn-toggle-xhair" class="overlay-btn active">+ XHAIR</button>
+  </div>
+
+  <!-- Map Legend -->
+  <!-- Bottom map legend: explains drone/target marker symbols on the map -->
+  <div class="map-legend label-text" id="map-legend" aria-label="Map symbol legend">
+    <div class="leg-item"><span class="leg-surv" aria-hidden="true">◇</span> SURV</div>
+    <div class="leg-item"><span class="leg-atk" aria-hidden="true">◆</span> ATK</div>
+    <div class="leg-item"><span class="leg-tgt" aria-hidden="true">+</span> TARGET</div>
+  </div>
+
+  <!-- Tactical Crosshair -->
+  <div id="map-crosshair" class="map-crosshair">
+    <svg class="xhair-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <line x1="2" y1="30" x2="28" y2="30" stroke="rgba(255,65,65,0.9)" stroke-width="1.2" />
+      <line x1="32" y1="30" x2="58" y2="30" stroke="rgba(255,65,65,0.9)" stroke-width="1.2" />
+      <line x1="30" y1="2" x2="30" y2="28" stroke="rgba(255,65,65,0.9)" stroke-width="1.2" />
+      <line x1="30" y1="32" x2="30" y2="58" stroke="rgba(255,65,65,0.9)" stroke-width="1.2" />
+      <circle cx="30" cy="30" r="1.8" fill="rgba(255,65,65,1)" />
+    </svg>
+    <div id="xhair-coords" class="xhair-coords">—</div>
+  </div>
+
+  <!-- Zoom Controls -->
+  <div class="zoom-controls">
+    <button id="btn-zoom-in" class="zoom-btn">+</button>
+    <button id="btn-zoom-out" class="zoom-btn">−</button>
+  </div>
+
+  <!-- Debug Overlay -->
+  <div id="map-debug-overlay" class="map-debug-overlay" style="display:none;">
+    <div class="dbg-header">⚙ MAP DEBUG</div>
+    <div class="dbg-row">ZOOM: <b id="dbg-zoom">—</b></div>
+    <div class="dbg-row">LAT: <b id="dbg-lat">—</b></div>
+    <div class="dbg-row">LON: <b id="dbg-lon">—</b></div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div id="map-loading-spinner" class="map-loading-spinner" style="display:none;">
+    <div class="spinner-ring"></div>
+  </div>
+
+  <!-- ═══ BOTTOM STATUS BAR ═══ -->
+  <div class="bottom-status-strip label-text">
+    <div id="map-tile-status">TILES: OFFLINE</div>
+    <div id="map-source-label" style="color:var(--text-secondary);">—</div>
+    <div id="map-cursor" style="flex:1; text-align:center;">0.000000°N 0.000000°E</div>
+    <div id="map-zoom" style="font-weight:600;">Z:5.0</div>
+  </div>

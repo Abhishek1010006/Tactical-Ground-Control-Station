@@ -1,0 +1,51 @@
+<!-- ═══ LAYER 3: RIGHT PANEL ═══ -->
+  <aside class="panel right-panel" id="right-panel-wrap">
+    <div class="panel-scroll-area" style="padding: 16px;">
+
+      <div
+        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px;">
+        <button class="collapse-btn" id="btn-collapse-right" title="Toggle Panel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <span class="label-text panel-header-ops">TACTICAL OPs</span>
+      </div>
+
+      <!-- Role Assignment -->
+      <div class="section-label" style="border:none; padding:0; margin-bottom:8px;">ROLE ASSIGNMENT</div>
+      <div class="select-wrapper">
+        <select id="role-surv-select" class="dark-select">
+          <option value="">— SELECT SURVEILLANCE UAV —</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+      <div id="surv-change-confirm" class="surv-change-confirm" hidden>
+        <span id="surv-change-text">CONFIRM CHANGE?</span>
+        <button type="button" id="btn-confirm-surv-change" class="btn btn-blue">CONFIRM</button>
+        <button type="button" id="btn-cancel-surv-change" class="btn btn-ghost">CANCEL</button>
+      </div>
+      <div class="label-text sub-label">ATTACK DRONES (AUTO-ASSIGNED)</div>
+      <div id="role-atk-chips" class="chip-container">
+        <span class="empty-chip">SELECT SURVEILLANCE TO AUTO-ASSIGN</span>
+      </div>
+
+      <!-- Mission Overview -->
+      <div class="section-label" style="margin-top:16px;">MISSION OVERVIEW</div>
+      <div id="right-mission-overview" class="right-mission-list">
+        <div class="ms-empty-msg">NO ACTIVE ASSIGNMENTS</div>
+      </div>
+
+      <!-- Attack Altitude -->
+      <div class="section-label" style="margin-top:16px;">ATTACK CONFIGURATION</div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="label-text attack-alt-label" style="white-space:nowrap;">ATTACK ALT</span>
+        <input type="number" id="attack-alt-input" class="tkof-inp" value="10" style="width:60px;">
+        <span class="label-text attack-alt-unit">m</span>
+        <button id="btn-set-alt" class="btn" style="font-size:10px; padding:3px 10px; margin-left:auto;">SET</button>
+      </div>
+      <button id="btn-launch-attack" class="btn btn-amber" style="width:100%; padding:8px; font-size:11px; font-weight:700; margin-bottom:10px;">LAUNCH ATTACK</button>
+      <div id="selected-attack-target" class="empty-chip">ATTACK USES SURVEILLANCE UAV POSITION</div>
+
+    </div>
+  </aside>

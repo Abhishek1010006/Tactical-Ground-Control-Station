@@ -1,0 +1,41 @@
+<!-- ═══ LAYER 2: LEFT PANEL ═══ -->
+  <aside class="panel left-panel" id="left-panel-wrap">
+    <!-- Tabs -->
+    <div class="panel-tabs">
+      <button id="tab-fleet" class="tab-btn active" onclick="switchTab('fleet')">FLEET</button>
+      <button class="collapse-btn" id="btn-collapse-left" title="Toggle Panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- FLEET TAB -->
+    <div id="view-fleet" class="tab-content active">
+      <div class="panel-section-header">
+        <span class="label-text">UAV FLEET</span>
+        <span id="fleet-count" class="badge-pill">0</span>
+      </div>
+      <div class="panel-scroll-area">
+        <div id="fleet-list"></div>
+
+        <!-- Datalink Status -->
+        <div class="datalink-block">
+          <div class="dl-row-header">
+            <div class="dl-dot" id="dl-dot"></div>
+            <span class="label-text">DATALINK STATUS</span>
+            <span id="dl-state-label" class="dl-state offline">OFFLINE</span>
+          </div>
+          <div class="dl-grid">
+            <div class="dl-row"><span class="dl-key">DRONES ACTIVE</span><span id="dl-drone-count"
+                class="dl-val">—</span></div>
+            <div class="dl-row"><span class="dl-key">LINK LATENCY</span><span id="dl-latency" class="dl-val">— ms</span>
+            </div>
+            <div class="dl-row"><span class="dl-key">BACKEND</span><span id="dl-backend" class="dl-val">—</span></div>
+            <div class="dl-row"><span class="dl-key">GCS UPTIME</span><span id="dl-uptime"
+                class="dl-val">00:00:00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</aside>
