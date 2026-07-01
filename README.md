@@ -4,17 +4,11 @@ Electron ground-control UI with a modular Python API for maps, MAVLink state, an
 
 ## Project Structure & Recent Updates
 
-The backend architecture has been completely refactored to be highly modular. The previously monolithic `api_server.py` has been replaced by a lightweight launcher, and all functionality has been split into a dedicated `api_server` Python package.
+The backend architecture has been completely refactored to be highly modular. The previously monolithic `api_server.py` has been replaced by a lightweight launcher, and all functionality has been split into a dedicated `api_server` Python package. 
 
-This modularization explicitly resolves previous import errors (e.g., `NameError: name 'json' is not defined`), removes obsolete code (like the old sequential `attack_system.py`), and ensures a robust architecture.
+This modularization explicitly resolves previous import errors (e.g., `NameError: name 'json' is not defined`), removes obsolete code (like the old sequential `attack_system.py`), and ensures a robust architecture. 
 
 **Note on Errors:** If you encounter a `json` NameError, ensure you are running the `api_server.py` located in this updated project directory (`Ground-Control-Station-main - Copy`), rather than a stale backup directory.
-
-**Note on Core Modules:** The `Mavlink/`, `core_logic/`, and `drone/` modules now live inside the `gcs_core_logic` submodule. This is a private repository linked into this project — contents are not publicly accessible. Collaborators with access can initialize it locally with:
-
-```bash
-git submodule update --init --recursive
-```
 
 ## Start
 
@@ -59,7 +53,7 @@ The real API is split by responsibility under the `api_server/` package:
 
 `main.py` is a terminal-operated CLI flow. It creates its own `DroneManager` and `StateManager`, then waits for `input()` to select the operating mode. If the Electron app launched `main.py` directly, the UI would not be able to read that internal state through HTTP, and the API would block on terminal input.
 
-Instead, the API reuses the exact same underlying core modules used by `main.py`, now located inside the `gcs_core_logic` submodule:
+Instead, the API reuses the exact same underlying core modules used by `main.py`:
 - `gcs_core_logic.Mavlink.tcp_connection.auto_connect_tcp`
 - `gcs_core_logic.Mavlink.Telemetry.TelemetryListener`
 - `gcs_core_logic.drone.DroneManager`
@@ -67,7 +61,7 @@ Instead, the API reuses the exact same underlying core modules used by `main.py`
 - `gcs_core_logic.Mavlink.Command`
 - `gcs_core_logic.core_logic.parallel_attack_system._deploy_drone_thread`
 
-*Note: `main.py`, `core_logic/`, `Mavlink/`, and `drone/` have intentionally been left untouched to preserve the original CLI capabilities. These core modules now live inside the `gcs_core_logic` private submodule.*
+*Note: `main.py`, `core_logic/`, `Mavlink/`, and `drone/` have intentionally been left untouched to preserve the original CLI capabilities.*
 
 ## UI To Backend Wiring
 
