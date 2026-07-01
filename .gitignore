@@ -7,4 +7,6 @@ venv/
 .env
 dist/
 build/
-*.log
+*.logMavlink/
+core_logic/
+drone/
