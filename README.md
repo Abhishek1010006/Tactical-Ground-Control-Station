@@ -1,14 +1,14 @@
 # SwarmGCS Tactical
 
-Electron ground-control UI with a modular Python API for maps, MAVLink state, and command routing.
+SwarmGCS Tactical is a full-stack drone swarm Ground Control Station designed for real-time monitoring, command, and coordination of multiple UAVs using MAVLink. It combines an Electron-based desktop UI with a modular Python API, offering mission planning, live telemetry visualization, swarm operation modes, and offline mapping support — all in one self-contained application.
 
-## Project Structure & Recent Updates
+The UI features a clean, glass-panel aesthetic with a modular layout, giving each control surface — map, telemetry, mission controls — its own distinct, translucent panel rather than a single cluttered dashboard. An in-app terminal is built directly into the interface, surfacing live backend logs, connection status, and command output without needing to switch to an external console.
 
-The backend architecture has been completely refactored to be highly modular. The previously monolithic `api_server.py` has been replaced by a lightweight launcher, and all functionality has been split into a dedicated `api_server` Python package. 
+The system is built around two main layers: a Python backend that handles drone connections, telemetry, and command execution over MAVLink, and an Electron frontend that renders the map, telemetry, and mission controls in real time. The two communicate over a local HTTP API, keeping the UI responsive even while managing multiple simultaneous drone connections.
 
-This modularization explicitly resolves previous import errors (e.g., `NameError: name 'json' is not defined`), removes obsolete code (like the old sequential `attack_system.py`), and ensures a robust architecture. 
+## Project Structure
 
-**Note on Errors:** If you encounter a `json` NameError, ensure you are running the `api_server.py` located in this updated project directory (`Ground-Control-Station-main - Copy`), rather than a stale backup directory.
+The backend is organized as a modular Python API under the `api_server/` package, with drone connection, telemetry, and swarm-control logic separated into their own dedicated modules for clarity and maintainability.
 
 ## Start
 
