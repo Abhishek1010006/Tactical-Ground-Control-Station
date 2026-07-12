@@ -25,7 +25,7 @@ The startup flow: launching the app, selecting a mission type, configuring the U
 | | |
 |---|---|
 | ![App startup](assets/photos/app_startup.png) **App Startup**<br>Initial launch screen as the Electron UI comes up and the backend API begins connecting. | ![Mission type selection](assets/photos/mission_type_selection.png) **Mission Type Selection**<br>Choosing the operating mode — surveillance, swarm, or attack — before mission configuration begins. |
-| ![Surveillance UAV setup](assets/photos/Surveillance_uav_setup.png) **Surveillance UAV Setup**<br>Configuring drone roles and parameters for a surveillance mission before launch. | ![All set](assets/photos/all_set.png) **System Ready**<br>Confirmation screen once all drones are connected, configured, and cleared for mission start. |
+| ![Surveillance UAV setup](assets/photos/Survillance_uav_setup.png) **Surveillance UAV Setup**<br>Configuring drone roles and parameters for a surveillance mission before launch. | ![All set](assets/photos/all_set.png) **System Ready**<br>Confirmation screen once all drones are connected, configured, and cleared for mission start. |
 
 ### 2. Mission Execution
 
@@ -33,7 +33,7 @@ The core mission loop: launching the swarm, executing the attack sequence, relea
 
 | | |
 |---|---|
-| ![Swarm launched, attack initiated](<assets/photos/surveillance drone launched and attack initiated.png>) **Swarm Launched — Attack Initiated**<br>Surveillance drone airborne and attack sequence triggered from the GCS. |  ![Attack drone reached location](<assets/photos/attack drone reached location.png>) **Attack Drone En Route**<br>Attack drone navigating autonomously to the designated target location. |
+| ![Swarm launched, attack initiated](<assets/photos/survillance drone launched and attack initiated.png>) **Swarm Launched — Attack Initiated**<br>Surveillance drone airborne and attack sequence triggered from the GCS. |  ![Attack drone reached location](<assets/photos/attack drone reached location.png>) **Attack Drone En Route**<br>Attack drone navigating autonomously to the designated target location. |
 | ![Payload dropped](<assets/photos/payload dropped.png>) **Payload Dropped**<br>Payload release confirmed at the target location, logged in real time by the GCS. | ![Returning home after attack](<assets/photos/returning home after attack.png>) **Returning to Base**<br>Drone executing RTL (Return-to-Launch) after mission completion. |
 
 ### 3. Mapping & Configuration
