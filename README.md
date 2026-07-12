@@ -6,6 +6,56 @@ The UI features a clean, glass-panel aesthetic with a modular layout, giving eac
 
 The system is built around two main layers: a Python backend that handles drone connections, telemetry, and command execution over MAVLink, and an Electron frontend that renders the map, telemetry, and mission controls in real time. The two communicate over a local HTTP API, keeping the UI responsive even while managing multiple simultaneous drone connections.
 
+---
+
+## Demo
+
+A full walkthrough of the app — from startup to mission execution — is available below.
+
+📹 **[Watch the full walkthrough video](assets/Main_video_v2.mp4)**
+
+*(If viewing this on GitHub, you can also drag the video file directly into a comment/PR to get an inline player.)*
+
+---
+
+## Screenshots
+
+### 1. Getting Started
+
+The startup flow: launching the app, selecting a mission type, configuring the UAV for surveillance, and confirming the system is ready to fly.
+
+| | |
+|---|---|
+| ![App startup](assets/photos/app_startup.png) **App Startup**<br>Initial launch screen as the Electron UI comes up and the backend API begins connecting. | ![Mission type selection](assets/photos/mission_type_selection.png) **Mission Type Selection**<br>Choosing the operating mode — surveillance, swarm, or attack — before mission configuration begins. |
+| ![Surveillance UAV setup](assets/photos/Surveillance_uav_setup.png) **Surveillance UAV Setup**<br>Configuring drone roles and parameters for a surveillance mission before launch. | ![All set](assets/photos/all_set.png) **System Ready**<br>Confirmation screen once all drones are connected, configured, and cleared for mission start. |
+
+### 2. Mission Execution
+
+The core mission loop: launching the swarm, executing the attack sequence, releasing payload, and returning to base.
+
+| | |
+|---|---|
+| ![Swarm launched, attack initiated](<assets/photos/surveillance drone launched and attack initiated.png>) **Swarm Launched — Attack Initiated**<br>Surveillance drone airborne and attack sequence triggered from the GCS. |  ![Attack drone reached location](<assets/photos/attack drone reached location.png>) **Attack Drone En Route**<br>Attack drone navigating autonomously to the designated target location. |
+| ![Payload dropped](<assets/photos/payload dropped.png>) **Payload Dropped**<br>Payload release confirmed at the target location, logged in real time by the GCS. | ![Returning home after attack](<assets/photos/returning home after attack.png>) **Returning to Base**<br>Drone executing RTL (Return-to-Launch) after mission completion. |
+
+### 3. Mapping & Configuration
+
+Offline map management and system-wide settings.
+
+| | |
+|---|---|
+| ![Map downloader](assets/photos/map_downloader.png) **Offline Map Downloader**<br>Downloading and caching map tiles locally for offline mission planning in low-connectivity environments. | ![Overall settings](<assets/photos/overall settings.png>) **Overall Settings**<br>Global configuration panel for connection parameters, mission defaults, and app preferences. |
+
+### 4. System Monitoring
+
+Live diagnostics surfaced directly in the UI, without needing an external console.
+
+| | |
+|---|---|
+| ![In-app terminal logs](assets/photos/in_appterminal_logs.png) **In-App Terminal**<br>Live backend logs, MAVLink connection status, and command output streamed directly into the UI. | ![Logs](assets/photos/logs.png) **Detailed Logs View**<br>Expanded log output for debugging connection issues and reviewing command history. |
+
+---
+
 ## Project Structure
 
 The backend is organized as a modular Python API under the `api_server/` package, with drone connection, telemetry, and swarm-control logic separated into their own dedicated modules for clarity and maintainability.
