@@ -10,11 +10,9 @@ The system is built around two main layers: a Python backend that handles drone 
 
 ## Demo
 
-A full walkthrough of the app — from startup to mission execution — is available below.
+A full walkthrough of the app — from startup to mission execution.
 
-📹 **[Watch the full walkthrough video](assets/Main_video_v2.mp4)**
-
-*(If viewing this on GitHub, you can also drag the video file directly into a comment/PR to get an inline player.)*
+https://github.com/user-attachments/assets/6738505c-18e7-4756-9029-d38db88d45d8
 
 ---
 
